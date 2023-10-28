@@ -18,6 +18,8 @@ import GoogleSignInButton from "../GoogleSignInButton";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useToast } from "../ui/use-toast";
+import "@/styles/styles.css"
+
 
 const FormSchema = z.object({
   email: z.string().min(1, "Email is required").email("Invalid email"),

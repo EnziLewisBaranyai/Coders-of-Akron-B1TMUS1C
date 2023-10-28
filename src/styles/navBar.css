@@ -1,0 +1,13 @@
+:root {
+    --primary-bg-color: #000000;     /* Black background */
+    --primary-text-color: #454545;   /* White text on the black background */
+    --primary-accent-color: #FFA500; /* Orange accent color */
+  }
+
+  .navBackground {
+    background-color: #454545;
+  }
+
+  .borderline {
+    border-color: #FFA500
+  }

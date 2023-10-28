@@ -1,0 +1,33 @@
+/* styles.css */
+:root {
+    --primary-bg-color: #000000;     /* Black background */
+    --primary-text-color: #FFFFFF;   /* White text on the black background */
+    --primary-accent-color: #FFA500; /* Orange accent color */
+    --secondary-bg-color: #454545;   /* White text on the black background */
+  }
+  
+  body {
+    background-color: var(--primary-bg-color);
+    color: var(--primary-text-color);
+  }
+  
+  a:hover {
+    color: #ac7000;
+  }
+
+  a {
+    color: var(--primary-accent-color);
+  }
+
+  link {
+    color: var(--primary-accent-color);
+  }
+
+  h1 {
+    color: var(--primary-accent-color)
+  }
+
+  .getStarted {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }

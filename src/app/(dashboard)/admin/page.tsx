@@ -1,6 +1,7 @@
 import { authOptions } from "@/lib/auth";
 import { getServerSession } from "next-auth";
 import Link from "next/link";
+import "@/styles/styles.css"
 
 const page = async () => {
   const session = await getServerSession(authOptions);
@@ -20,7 +21,7 @@ const page = async () => {
       Please{" "}
       <Link
         href="/sign-in"
-        className="underline text-blue-500 hover:text-blue-700"
+        className="underline"
       >
         sign in
       </Link>{" "}
