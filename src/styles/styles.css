@@ -3,7 +3,9 @@
     --primary-bg-color: #000000;     /* Black background */
     --primary-text-color: #FFFFFF;   /* White text on the black background */
     --primary-accent-color: #FFA500; /* Orange accent color */
-    --secondary-bg-color: #454545;   /* White text on the black background */
+    --secondary-bg-color: #454545;
+    --form-bg-color: #202020;
+    --form-text-color: #C8C8C8;
   }
   
   body {
@@ -30,4 +32,11 @@
   .getStarted {
     margin-top: 20px;
     margin-bottom: 20px;
+  }
+
+  .form {
+    background-color: var(--form-bg-color);
+    padding: 25px;
+    border-radius: 10px;
+    color: var(--form-text-color);
   }
