@@ -5,7 +5,7 @@
     --primary-accent-color: #FFA500; /* Orange accent color */
     --secondary-bg-color: #454545;
     --form-bg-color: #202020;
-    --form-text-color: #C8C8C8;
+    --form-text-color: 		#989898;
   }
   
   body {
@@ -39,4 +39,11 @@
     padding: 25px;
     border-radius: 10px;
     color: var(--form-text-color);
+  }
+
+  .formText {
+    color: var(--form-text-color);
+    text-align: center;
+    font-size: small;
+    margin-top: 0.5rem;
   }
