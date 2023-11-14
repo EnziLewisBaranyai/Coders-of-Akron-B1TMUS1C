@@ -11,3 +11,8 @@
   .borderline {
     border-color: #FFA500
   }
+
+  .navItem {
+    display: inline-block;
+    margin-right: 30px;
+  }
