@@ -16,7 +16,14 @@ const Navbar = async () => {
           <Speaker />
         </Link>
         {session?.user ? (
-          <UserAccountnav />
+          /*<UserAccountnav />*/
+          <nav>
+            <ul>
+              <li><Link href="/">Feed</Link></li>
+              <li><Link href="/yourmusic">Your Music</Link></li>
+              <UserAccountnav />
+            </ul>
+          </nav>
         ) : (
           <Link className={buttonVariants()} href="/sign-in">
             Sign in
