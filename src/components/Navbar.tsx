@@ -9,17 +9,18 @@ import "@/styles/navBar.css"
 
 const Navbar = async () => {
   const session = await getServerSession(authOptions);
+  const speakerLink = session?.user ? '/yourmusic' : '/';
   return (
     <div className=" py-2 border-b borderline fixed w-full z-10 top-0 navBackground">
       <div className="container flex items-center justify-between">
-        <Link href="/">
+        <Link href={speakerLink}>
           <Speaker />
         </Link>
         {session?.user ? (
           /*<UserAccountnav />*/
+
           <nav>
             <ul>
-              <li className="navItem"><Link href="/">Feed</Link></li>
               <li className="navItem"><Link href="/yourmusic">Your Music</Link></li>
               <li className="navItem"><Link href="/">Profile</Link></li>
               <UserAccountnav />
