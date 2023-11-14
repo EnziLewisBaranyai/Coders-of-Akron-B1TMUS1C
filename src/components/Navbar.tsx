@@ -9,7 +9,7 @@ import "@/styles/navBar.css"
 
 const Navbar = async () => {
   const session = await getServerSession(authOptions);
-  const speakerLink = session?.user ? '/yourmusic' : '/';
+  const speakerLink = session?.user ? '/feed' : '/';
   return (
     <div className=" py-2 border-b borderline fixed w-full z-10 top-0 navBackground">
       <div className="container flex items-center justify-between">
@@ -22,7 +22,7 @@ const Navbar = async () => {
           <nav>
             <ul>
               <li className="navItem"><Link href="/yourmusic">Your Music</Link></li>
-              <li className="navItem"><Link href="/">Profile</Link></li>
+              <li className="navItem"><Link href="/profile">Profile</Link></li>
               <UserAccountnav />
             </ul>
           </nav>
