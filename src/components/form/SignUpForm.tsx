@@ -63,7 +63,7 @@ const SignUpForm = () => {
     } else {
       toast({
         title: "Error",
-        description: "Oops! Something went wrong!",
+        description: "An account with this email or username already exists. Please try again.",
         variant: "destructive",
       });
     }

@@ -21,6 +21,7 @@ const Navbar = async () => {
 
           <nav>
             <ul>
+              <li className="navItem">{session.user.name}</li>
               <li className="navItem"><Link href="/yourmusic">Your Music</Link></li>
               <li className="navItem"><Link href="/profile">Profile</Link></li>
               <UserAccountnav />
