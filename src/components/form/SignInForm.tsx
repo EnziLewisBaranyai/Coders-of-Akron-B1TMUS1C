@@ -18,8 +18,8 @@ import GoogleSignInButton from "../GoogleSignInButton";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useToast } from "../ui/use-toast";
-import "@/styles/styles.css"
-
+import "@/styles/styles.css";
+import SpotifySignInButton from "../SpotifySignInButton";
 
 const FormSchema = z.object({
   email: z.string().min(1, "Email is required").email("Invalid email"),
@@ -102,6 +102,10 @@ const SignInForm = () => {
         or
       </div>
       <GoogleSignInButton>Sign in with Google</GoogleSignInButton>
+      <div className="mx-auto my-4 flex w-full items-center justify-evenly before:mr-4 before:block before:h-px before:flex-grow before:bg-stone-400 after:ml-4 after:block after:h-px after:flex-grow after:bg-stone-400">
+        or
+      </div>
+      <SpotifySignInButton>Sign in with Spotify</SpotifySignInButton>
       <p className="formText">
         If you don&apos;t have an account, please&nbsp;
         <Link className="text-blue-500 hover:underline" href="/sign-up">
