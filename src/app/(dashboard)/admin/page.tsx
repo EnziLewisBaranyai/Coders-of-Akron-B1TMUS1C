@@ -9,10 +9,15 @@ const page = async () => {
 
   if (session?.user) {
     return (
-      <h2 className="text-4xl font-semibold">
-        Welcome {session?.user.username || session?.user.name}. Let's get
-        started.
-      </h2>
+      <div>
+        <h2 className="text-4xl font-semibold text-orange-400">
+          Hello {session?.user.username || session?.user.name}! You have successfully signed in. 
+        </h2>
+        <br/>
+        <p className="text-orange-400 text-2xl">
+          If it is your first time here, make sure to update your profile and sign into your Spotify account.
+        </p>
+      </div>
     );
   }
 

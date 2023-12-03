@@ -26,9 +26,6 @@ const Navbar = async () => {
                 <Link href="/profile">Profile</Link>
               </li>
               <li className="navItem">
-                <Link href="/feed">Feed</Link>
-              </li>
-              <li className="navItem">
                 <Link href="/yourmusic">Your Music</Link>
               </li>
               <UserAccountnav />
