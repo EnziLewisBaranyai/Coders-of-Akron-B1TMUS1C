@@ -13,11 +13,11 @@
     color: var(--primary-text-color);
   }
   
-  a:hover {
+  .aclass:hover {
     color: #ac7000;
   }
 
-  a {
+  .aclass {
     color: var(--primary-accent-color);
   }
 

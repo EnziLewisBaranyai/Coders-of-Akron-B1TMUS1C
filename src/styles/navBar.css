@@ -15,4 +15,5 @@
   .navItem {
     display: inline-block;
     margin-right: 30px;
+    color: var(--primary-accent-color)
   }

@@ -50,7 +50,7 @@ export default async function Home() {
 
             <div className="space-x-8 flex justify-between mt-32 md:mt-0 md:justify-center">
               <button
-                className="text-black py-2 px-4 uppercase rounded bg-gray-800 hover:bg-gray-900 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5"
+                className="text-black py-2 px-4 uppercase rounded bg-orange-400 hover:bg-orange-500 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5"
               >
                 <Link href="/edit-profile">
                   Edit Profile

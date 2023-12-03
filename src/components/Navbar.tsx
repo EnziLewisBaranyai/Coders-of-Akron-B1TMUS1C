@@ -13,7 +13,7 @@ const Navbar = async () => {
   return (
     <div className=" py-2 border-b borderline fixed w-full z-10 top-0 navBackground">
       <div className="container flex items-center justify-between">
-        <Link href={speakerLink}>
+        <Link className="aclass" href={speakerLink}>
           <Speaker />
         </Link>
         {session?.user ? (

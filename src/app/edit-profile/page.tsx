@@ -5,6 +5,7 @@ import { prisma } from '@/lib/prisma'
 import User from "@/components/User";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
+import Link from "next/link";
 
 
 export default async function Home() {
@@ -78,6 +79,12 @@ export default async function Home() {
               </div>
 
               <div className="flex justify-end">
+                <button
+                    className="py-1.5 px-3 m-1 text-center bg-orange-400 border rounded-md text-black hover:bg-orange-500 hover:text-black dark::text-black dark:bg-orange-400">
+                    <Link href="/profile">
+                      Cancel
+                    </Link>
+                </button>
                 <button
                   className="py-1.5 px-3 m-1 text-center bg-orange-400 border rounded-md text-black hover:bg-orange-500 hover:text-black dark:text-orange-200 dark:bg-orange-400"
                   type="submit"
