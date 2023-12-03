@@ -17,6 +17,7 @@ import Link from "next/link";
 import GoogleSignInButton from "../GoogleSignInButton";
 import { useRouter } from "next/navigation";
 import { useToast } from "../ui/use-toast";
+import SpotifySignInButton from "../SpotifySignInButton";
 
 const FormSchema = z
   .object({
@@ -63,7 +64,8 @@ const SignUpForm = () => {
     } else {
       toast({
         title: "Error",
-        description: "An account with this email or username already exists. Please try again.",
+        description:
+          "An account with this email or username already exists. Please try again.",
         variant: "destructive",
       });
     }
@@ -142,6 +144,10 @@ const SignUpForm = () => {
         or
       </div>
       <GoogleSignInButton>Sign up with Google</GoogleSignInButton>
+      <div className="mx-auto my-4 flex w-full items-center justify-evenly before:mr-4 before:block before:h-px before:flex-grow before:bg-stone-400 after:ml-4 after:block after:h-px after:flex-grow after:bg-stone-400">
+        or
+      </div>
+      <SpotifySignInButton>Sign up with Spotify</SpotifySignInButton>
       <p className="formText">
         If you already have an account, please&nbsp;
         <Link className="text-blue-500 hover:underline" href="/sign-in">
