@@ -5,7 +5,6 @@ import { signIn } from "next-auth/react";
 interface SpotifySignInButtonProps {
   children: ReactNode;
 }
-
 const SpotifySignInButton: FC<SpotifySignInButtonProps> = ({ children }) => {
   const loginWithSpotify = () =>
     signIn("spotify", { callbackUrl: "https://localhost:3000/admin" });

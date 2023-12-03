@@ -5,11 +5,11 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { signOut } from "next-auth/react";
 import UserAccountnav from "./UserAccountnav";
-import "@/styles/navBar.css"
+import "@/styles/navBar.css";
 
 const Navbar = async () => {
   const session = await getServerSession(authOptions);
-  const speakerLink = session?.user ? '/feed' : '/';
+  const speakerLink = session?.user ? "/feed" : "/";
   return (
     <div className=" py-2 border-b borderline fixed w-full z-10 top-0 navBackground">
       <div className="container flex items-center justify-between">
@@ -22,8 +22,15 @@ const Navbar = async () => {
           <nav>
             <ul>
               <li className="navItem">{session.user.name}</li>
-              <li className="navItem"><Link href="/yourmusic">Your Music</Link></li>
-              <li className="navItem"><Link href="/profile">Profile</Link></li>
+              <li className="navItem">
+                <Link href="/profile">Profile</Link>
+              </li>
+              <li className="navItem">
+                <Link href="/feed">Feed</Link>
+              </li>
+              <li className="navItem">
+                <Link href="/yourmusic">Your Music</Link>
+              </li>
               <UserAccountnav />
             </ul>
           </nav>
