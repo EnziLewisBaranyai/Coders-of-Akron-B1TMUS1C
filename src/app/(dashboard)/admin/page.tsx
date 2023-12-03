@@ -10,7 +10,7 @@ const page = async () => {
   if (session?.user) {
     return (
       <h2 className="text-4xl font-semibold">
-        Welcome {session?.user.username || session.user.name}. Let's get
+        Welcome {session?.user.username || session?.user.name}. Let's get
         started.
       </h2>
     );
