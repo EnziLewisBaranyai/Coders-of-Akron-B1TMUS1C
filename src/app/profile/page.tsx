@@ -63,7 +63,7 @@ export default async function Home() {
             <h1 className="text-4xl font-medium text-orange-400">{user?.name}</h1>
             <p className="font-light text-orange-300 mt-3">Username: {user?.username}</p>
             <p className="font-light text-orange-300 mt-3">Favorite music: {user?.favoriteMusic}</p>
-
+            <p className="font-light text-orange-300 mt-3">Favorite Artist: {user?.favoriteArtist}</p>
             <p className="mt-8 text-orange-300">Bio: {user?.bio}</p>
           </div>
         </div>

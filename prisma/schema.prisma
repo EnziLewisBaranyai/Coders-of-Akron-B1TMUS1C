@@ -58,6 +58,7 @@ model User {
   image         String?
   bio           String?
   favoriteMusic String?
+  favoriteArtist String?
   accounts      Account[]
   sessions      Session[]
   Post          Post[]
@@ -123,9 +124,4 @@ model Comment {
   post       Post?     @relation(fields: [postId], references: [id])
   playlistId String?
   playlist   Playlist? @relation(fields: [playlistId], references: [id])
-}
-
-model Test {
-  id         String    @id @default(cuid())
-  content    String
 }

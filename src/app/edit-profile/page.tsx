@@ -24,11 +24,13 @@ async function updateProfile(data: FormData) {
 
   const email = data.get("email")?.valueOf()
   const favoriteMusic = data.get("favoriteMusic")?.valueOf()
+  const favoriteArtist = data.get("favoriteArtist")?.valueOf()
   const bio = data.get("bio")?.valueOf()
 
   await prisma.user.update({
     data: {
       favoriteMusic: favoriteMusic,
+      favoriteArtist: favoriteArtist,
       bio: bio,
     },
     where: {
@@ -70,6 +72,16 @@ export default async function Home() {
               </div>
 
               <div>
+                <label className="text-orange-400 dark:text-orange-300">Favorite Artist</label>
+                <input
+                  className="w-full py-3 border border-black rounded-lg px-3 focus:outline-none focus:border-black hover:shadow bg-gray text-black"
+                  type="text"
+                  name="favoriteArtist"
+                  defaultValue={user?.favoriteArtist}
+                />
+              </div>
+
+              <div>
                 <label className="text-orange-400 dark:text-orange-300">Bio</label>
                 <textarea
                   className="w-full py-3 border border-black rounded-lg px-3 focus:outline-none focus:border-black hover:shadow bg-gray text-black"
@@ -82,7 +94,7 @@ export default async function Home() {
                 <button
                     className="py-1.5 px-3 m-1 text-center bg-orange-400 border rounded-md text-black hover:bg-orange-500 hover:text-black dark::text-black dark:bg-orange-400">
                     <Link href="/profile">
-                      Cancel
+                      Back
                     </Link>
                 </button>
                 <button
