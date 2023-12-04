@@ -124,3 +124,8 @@ model Comment {
   playlistId String?
   playlist   Playlist? @relation(fields: [playlistId], references: [id])
 }
+
+model Test {
+  id         String    @id @default(cuid())
+  content    String
+}

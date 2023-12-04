@@ -2,11 +2,40 @@ import "@/styles/styles.css"
 import React from "react"
 import { useState, useEffect } from 'react';
 import { prisma } from '@/lib/prisma'
-import User from "@/components/User";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import Link from "next/link";
+import { useForm } from 'react-hook-form'
 
+async function updateProfile(data: FormData) {
+  "use server"
+
+  const session = await getServerSession(authOptions)
+  
+  if (!session) {
+    return { props: { user: null } };
+  }
+
+  const user = await prisma.user.findFirst({
+    where: {
+      email: session.user.email
+    }
+  })
+
+  const email = data.get("email")?.valueOf()
+  const favoriteMusic = data.get("favoriteMusic")?.valueOf()
+  const bio = data.get("bio")?.valueOf()
+
+  await prisma.user.update({
+    data: {
+      favoriteMusic: favoriteMusic,
+      bio: bio,
+    },
+    where: {
+      email: user.email
+    }
+  })
+}
 
 export default async function Home() {
   const session = await getServerSession(authOptions)
@@ -24,40 +53,11 @@ export default async function Home() {
   return (
     <main>
         <div className="flex justify-center mt-20 px-8">
-        <form className="max-w-2xl">
+        <form action={updateProfile} className="max-w-2xl">
           <div className="flex flex-wrap border shadow rounded-lg p-3 dark:bg-gray-600">
             <h2 className="text-xl text-orange-400 dark:text-orange-300 pb-2">Profile settings:</h2>
 
             <div className="flex flex-col gap-2 w-full border-black">
-
-              <div>
-                <label className="text-orange-400 dark:text-orange-300">Username</label>
-                <input
-                  className="w-full py-3 border border-black rounded-lg px-3 focus:outline-none focus:border-black hover:shadow bg-gray text-black"
-                  type="text"
-                  name="username"
-                  value={user.username}
-                />
-              </div>
-
-              <div>
-                <label className="text-orange-400 dark:text-orange-300">Password</label>
-                <input
-                  className="w-full py-3 border border-black rounded-lg px-3 focus:outline-none focus:border-black hover:shadow bg-gray text-black"
-                  type="text"
-                  name="password"
-                />
-              </div>
-
-              <div>
-                <label className="text-orange-400 dark:text-orange-300">Email</label>
-                <input
-                  className="w-full py-3 border border-black rounded-lg px-3 focus:outline-none focus:border-black hover:shadow bg-gray text-black"
-                  type="text"
-                  name="email"
-                  value={user.email}
-                />
-              </div>
 
               <div>
                 <label className="text-orange-400 dark:text-orange-300">Favorite Music</label>
@@ -65,7 +65,7 @@ export default async function Home() {
                   className="w-full py-3 border border-black rounded-lg px-3 focus:outline-none focus:border-black hover:shadow bg-gray text-black"
                   type="text"
                   name="favoriteMusic"
-                  value={user.favoriteMusic}
+                  defaultValue={user?.favoriteMusic}
                 />
               </div>
 
@@ -74,7 +74,7 @@ export default async function Home() {
                 <textarea
                   className="w-full py-3 border border-black rounded-lg px-3 focus:outline-none focus:border-black hover:shadow bg-gray text-black"
                   name="bio"
-                  value={user.bio}
+                  defaultValue={user?.bio}
                 ></textarea>
               </div>
 
@@ -99,5 +99,3 @@ export default async function Home() {
     </main>
   )
 }
-
-
